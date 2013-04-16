@@ -56,11 +56,11 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
       "typedef enum {\n");
     printer->Indent();
     
-    for (int i = 0; i < canonical_values_.size(); i++) {
+    for (int i = 0; i < descriptor_->value_count(); i++) {
       printer->Print(
         "$name$ = $value$,\n",
-        "name", EnumValueName(canonical_values_[i]),
-        "value", SimpleItoa(canonical_values_[i]->number()));
+        "name", EnumValueName(descriptor_->value(i)),
+        "value", SimpleItoa(descriptor_->value(i)->number()));
     }
 
     printer->Outdent();
