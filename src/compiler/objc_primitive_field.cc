@@ -741,7 +741,7 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
 		printer->Print(variables_,
 			"NSUInteger $list_name$Count=self.$list_name$.count;\n"
 	        "for(int i=0;i<$list_name$Count;i++){\n"
-				"  [output appendFormat:@\"%@%@: %d\\n\", indent, @\"$name$\", [self.$list_name$ $array_value_type_name$AtIndex:i]];\n"
+				"  [output appendFormat:@\"%@%@: %@\\n\", indent, @\"$name$\", @([self.$list_name$ $array_value_type_name$AtIndex:i])];\n"
 	        "}\n");
 		//RAGY need to adjust the string format from %@
     } else {
@@ -764,7 +764,7 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
       printer->Print(variables_,
 		"NSUInteger $list_name$Count=self.$list_name$.count;\n"
         "for(int i=0;i<$list_name$Count;i++){\n"
-	        "hashCode = hashCode * 31 + [self.$list_name$ $array_value_type_name$AtIndex:i];\n"
+	        "hashCode = hashCode * 31 + (NSUInteger)[self.$list_name$ $array_value_type_name$AtIndex:i];\n"
         "}\n");
     } else {
       printer->Print(variables_,
