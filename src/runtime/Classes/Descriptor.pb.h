@@ -54,7 +54,7 @@
   #endif
 #endif
 
-typedef enum {
+typedef NS_ENUM(int16_t, PBFieldDescriptorProto_Type) {
   PBFieldDescriptorProto_TypeTypeDouble = 1,
   PBFieldDescriptorProto_TypeTypeFloat = 2,
   PBFieldDescriptorProto_TypeTypeInt64 = 3,
@@ -73,31 +73,31 @@ typedef enum {
   PBFieldDescriptorProto_TypeTypeSfixed64 = 16,
   PBFieldDescriptorProto_TypeTypeSint32 = 17,
   PBFieldDescriptorProto_TypeTypeSint64 = 18,
-} PBFieldDescriptorProto_Type;
+};
 
 BOOL PBFieldDescriptorProto_TypeIsValidValue(PBFieldDescriptorProto_Type value);
 
-typedef enum {
+typedef NS_ENUM(int16_t, PBFieldDescriptorProto_Label) {
   PBFieldDescriptorProto_LabelLabelOptional = 1,
   PBFieldDescriptorProto_LabelLabelRequired = 2,
   PBFieldDescriptorProto_LabelLabelRepeated = 3,
-} PBFieldDescriptorProto_Label;
+};
 
 BOOL PBFieldDescriptorProto_LabelIsValidValue(PBFieldDescriptorProto_Label value);
 
-typedef enum {
+typedef NS_ENUM(int16_t, PBFileOptions_OptimizeMode) {
   PBFileOptions_OptimizeModeSpeed = 1,
   PBFileOptions_OptimizeModeCodeSize = 2,
   PBFileOptions_OptimizeModeLiteRuntime = 3,
-} PBFileOptions_OptimizeMode;
+};
 
 BOOL PBFileOptions_OptimizeModeIsValidValue(PBFileOptions_OptimizeMode value);
 
-typedef enum {
+typedef NS_ENUM(int16_t, PBFieldOptions_CType) {
   PBFieldOptions_CTypeString = 0,
   PBFieldOptions_CTypeCord = 1,
   PBFieldOptions_CTypeStringPiece = 2,
-} PBFieldOptions_CType;
+};
 
 BOOL PBFieldOptions_CTypeIsValidValue(PBFieldOptions_CType value);
 

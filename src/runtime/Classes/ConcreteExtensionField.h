@@ -17,7 +17,7 @@
 
 #import "ExtensionField.h"
 
-typedef enum {
+typedef NS_ENUM(int16_t, PBExtensionType) {
   PBExtensionTypeBool,
   PBExtensionTypeFixed32,
   PBExtensionTypeSFixed32,
@@ -36,7 +36,7 @@ typedef enum {
   PBExtensionTypeMessage,
   PBExtensionTypeGroup,
   PBExtensionTypeEnum
-} PBExtensionType;
+};
 
 @interface PBConcreteExtensionField : NSObject<PBExtensionField> {
 @private

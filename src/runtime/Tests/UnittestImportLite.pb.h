@@ -16,11 +16,11 @@
   #endif
 #endif
 
-typedef enum {
+typedef NS_ENUM(int16_t, ImportEnumLite) {
   ImportEnumLiteImportLiteFoo = 7,
   ImportEnumLiteImportLiteBar = 8,
   ImportEnumLiteImportLiteBaz = 9,
-} ImportEnumLite;
+};
 
 BOOL ImportEnumLiteIsValidValue(ImportEnumLite value);
 

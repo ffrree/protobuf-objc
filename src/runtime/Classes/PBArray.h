@@ -22,8 +22,7 @@ extern NSString * const PBArrayTypeMismatchException;
 extern NSString * const PBArrayNumberExpectedException;
 extern NSString * const PBArrayAllocationFailureException;
 
-typedef enum _PBArrayValueType
-{
+typedef NS_ENUM(int16_t, PBArrayValueType) {
 	PBArrayValueTypeBool,
 	PBArrayValueTypeInt32,
 	PBArrayValueTypeUInt32,
@@ -31,7 +30,7 @@ typedef enum _PBArrayValueType
 	PBArrayValueTypeUInt64,
 	PBArrayValueTypeFloat,
 	PBArrayValueTypeDouble,
-} PBArrayValueType;
+};
 
 // PBArray is an immutable array class that's optimized for storing primitive
 // values.  All values stored in an PBArray instance must have the same type

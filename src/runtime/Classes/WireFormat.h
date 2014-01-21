@@ -15,7 +15,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-typedef enum {
+typedef NS_ENUM(int16_t, PBWireFormat) {
   PBWireFormatVarint = 0,
   PBWireFormatFixed64 = 1,
   PBWireFormatLengthDelimited = 2,
@@ -29,7 +29,7 @@ typedef enum {
   PBWireFormatMessageSetItem = 1,
   PBWireFormatMessageSetTypeId = 2,
   PBWireFormatMessageSetMessage = 3
-} PBWireFormat;
+};
 
 int32_t PBWireFormatMakeTag(int32_t fieldNumber, int32_t wireType);
 int32_t PBWireFormatGetTagWireType(int32_t tag);

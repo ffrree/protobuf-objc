@@ -98,30 +98,30 @@
   #endif
 #endif
 
-typedef enum {
+typedef NS_ENUM(int16_t, MethodOpt1) {
   MethodOpt1Methodopt1Val1 = 1,
   MethodOpt1Methodopt1Val2 = 2,
-} MethodOpt1;
+};
 
 BOOL MethodOpt1IsValidValue(MethodOpt1 value);
 
-typedef enum {
+typedef NS_ENUM(int16_t, AggregateEnum) {
   AggregateEnumValue = 1,
-} AggregateEnum;
+};
 
 BOOL AggregateEnumIsValidValue(AggregateEnum value);
 
-typedef enum {
+typedef NS_ENUM(int16_t, TestMessageWithCustomOptions_AnEnum) {
   TestMessageWithCustomOptions_AnEnumAnenumVal1 = 1,
   TestMessageWithCustomOptions_AnEnumAnenumVal2 = 2,
-} TestMessageWithCustomOptions_AnEnum;
+};
 
 BOOL TestMessageWithCustomOptions_AnEnumIsValidValue(TestMessageWithCustomOptions_AnEnum value);
 
-typedef enum {
+typedef NS_ENUM(int16_t, DummyMessageContainingEnum_TestEnumType) {
   DummyMessageContainingEnum_TestEnumTypeTestOptionEnumType1 = 22,
   DummyMessageContainingEnum_TestEnumTypeTestOptionEnumType2 = -23,
-} DummyMessageContainingEnum_TestEnumType;
+};
 
 BOOL DummyMessageContainingEnum_TestEnumTypeIsValidValue(DummyMessageContainingEnum_TestEnumType value);
 
