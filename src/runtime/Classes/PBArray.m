@@ -224,6 +224,10 @@ static PBArrayValueTypeInfo PBValueTypes[] =
 	{
 		return YES;
 	}
+	else if (nil == array)
+	{
+		return NO;
+	}
 	else if (array->_count != _count)
 	{
 		return NO;
