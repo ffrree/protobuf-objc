@@ -697,7 +697,7 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
     printer->Indent();
     printer->Print(variables_,
       "int32_t dataSize = 0;\n"
-      "const NSUInteger count = self.$list_name$.count;\n");
+      "const int32_t count = (int32_t)self.$list_name$.count;\n");
     if(isObjectArray(descriptor_)) {
       printer->Print(variables_,
       "for ($type$ *element in self.$list_name$) {\n"

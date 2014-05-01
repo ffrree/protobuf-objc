@@ -428,7 +428,7 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
     printer->Print(variables_,
       "{\n"
       "  int32_t dataSize = 0;\n"
-      "  const NSUInteger count = self.$list_name$.count;\n");
+      "  const int32_t count = (int32_t)self.$list_name$.count;\n");
     printer->Indent();
 
     printer->Print(variables_,
