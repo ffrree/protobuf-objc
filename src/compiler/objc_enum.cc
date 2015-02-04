@@ -89,7 +89,8 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
     printer->Print(
       "      return YES;\n"
       "    default:\n"
-      "      return NO;\n"
+//      "      return NO;\n"
+      "      return YES;\n"
       "  }\n"
       "}\n");
   }
