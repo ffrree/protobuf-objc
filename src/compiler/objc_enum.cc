@@ -68,9 +68,14 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
     printer->Print(
       "};\n"
       "\n"
-      "BOOL $classname$IsValidValue($classname$ value);\n"
-      "\n",
+      "BOOL $classname$IsValidValue($classname$ value);\n",
       "classname", ClassName(descriptor_));
+
+    printer->Print(
+      "NSString *$classname$ToString($classname$ value);\n",
+      "classname", ClassName(descriptor_));
+
+    printer->Print("\n");
   }
 
 
@@ -93,6 +98,25 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
       "      return YES;\n"
       "  }\n"
       "}\n");
+
+    printer->Print(
+        "NSString *$classname$ToString($classname$ value) {\n"
+        "    switch (value) {\n",
+        "classname", ClassName(descriptor_));
+
+    for (int i = 0; i < canonical_values_.size(); i++) {
+      printer->Print(
+        "        case $name$:\n"
+        "            return @\"$shortname$\";\n",
+        "name", EnumValueName(canonical_values_[i]),
+        "shortname", UnderscoresToCapitalizedCamelCase(canonical_values_[i]->name()));
+    }
+
+    printer->Print(
+        "    }\n"
+        "\n"
+        "    return [NSString stringWithFormat:@\"Unknown-%@\", @(value)];\n"
+        "}\n");
   }
 }  // namespace objectivec
 }  // namespace compiler
