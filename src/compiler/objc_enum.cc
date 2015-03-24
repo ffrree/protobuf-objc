@@ -105,24 +105,18 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
 
     printer->Print(
       "NSIndexSet *$classname$IndexSet() {\n"
-      "  __block NSIndexSet *indexSet;\n"
-      "  static dispatch_once_t onceToken;\n"
-      "  dispatch_once(&onceToken, ^{\n"
-      "    NSMutableIndexSet *mutableIndexSet = [NSMutableIndexSet indexSet];\n",
+      "  NSMutableIndexSet *mutableIndexSet = [NSMutableIndexSet indexSet];\n",
       "classname", ClassName(descriptor_));
 
     for (int i = 0; i < canonical_values_.size(); i++) {
       printer->Print(
-        "    [mutableIndexSet addIndex:$name$];\n",
+        "  [mutableIndexSet addIndex:$name$];\n",
         "name", EnumValueName(canonical_values_[i]));
     }
 
     printer->Print(
       "\n"
-      "    indexSet = [mutableIndexSet copy];\n"
-      "  });\n"
-      "\n"
-      "  return indexSet;\n"
+      "  return [mutableIndexSet copy];\n"
       "}\n");
 
     printer->Print(
